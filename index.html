@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- 惊了！居然有人好奇这个页面的源码 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FinLeek</title>
+    <script>
+        function check(val) {
+            if (val < 10) {
+                return ("0" + val);
+            }
+            else {
+                return (val);
+            }
+        }
+        function displayTime() {
+            var timeDiv=document.getElementById("timeDiv");
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
+            var second = date.getSeconds();
+            var time_str ="Version&nbsp;&nbsp;0.1_beta&nbsp;&nbsp;" + year + "-" + month + "-" + day + "-" + check(hour)
+                + ":" + check(minutes) + ":" + check(second);
+            timeDiv.innerHTML = time_str;
+        }
+        function start(){
+            window.setInterval("displayTime()",1000)
+        }
+    </script>
+</head>
+<body  onload="start();">
+    <h1 align="center">Welcome to FinLeek</h1>
+    <p align="center">&nbsp;&nbsp;This is a personal homepage designed by financial practitioners who study computer technology.The page adheres to the minimalist design style.</p>
+    <br>
+    <div align="center" id="timeDiv"></div>
+</body>
+</html>
